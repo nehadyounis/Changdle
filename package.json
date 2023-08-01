@@ -1,5 +1,5 @@
 {
-  "name": "projectname",
+  "name": "wordle-that-changes",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
