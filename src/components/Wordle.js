@@ -38,6 +38,8 @@ export default function Wordle(solutions) {
                 <li><a href="https://github.com/nehadyounis" target="_blank"><i className="icon-github2"></i></a></li>
                 <li><a href="https://linkedin.com/in/nehadyounis" target="_blank"><i className="icon-linkedin2"></i></a></li>
                 <li><a href="mailto:nehadyounice@gmail.com"><i class="icon-mail"></i></a></li>
+                <li><h6> | See the project on github:</h6></li>
+                <li><a href="https://github.com/nehadyounis" target="_blank"><i className="icon-github2"></i></a></li>
             </ul>
         </div>
     )
