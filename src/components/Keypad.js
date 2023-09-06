@@ -27,8 +27,8 @@ export default function Keypad({letters, isKeyPressed}) {
                 <div onClick={() => {isKeyPressed({key: letter.key}); console.log(letter.key)}} key = {i} className = {letter.color}> {letter.key}</div>
             )
         })}
-        <div style = {{width: '80px'}} onClick={() => {isKeyPressed({key: 'Backspace'})}} className = "empty"> Del </div>
-        <div style = {{width: '100px'}} onClick={() => {isKeyPressed({key: 'Enter'})}} className = "empty"> Enter </div>
+        <div style = {{width: '60px'}} onClick={() => {isKeyPressed({key: 'Backspace'})}} className = "empty"> Del </div>
+        <div style = {{width: '70px'}} onClick={() => {isKeyPressed({key: 'Enter'})}} className = "empty"> Enter </div>
 
             
         </div>
