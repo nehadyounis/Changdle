@@ -1,8 +1,7 @@
 import {useState} from 'react'
 
 const useWordle = ({solutions, possibleWords})=> {
-    console.log("From use wordle", possibleWords)
-    console.log("From use wordle", solutions)
+
 
     let initials = []
     for (let i = 0; i<6; i++){
@@ -53,7 +52,6 @@ const useWordle = ({solutions, possibleWords})=> {
                     currentSolution[currentSolution.indexOf(wordArray[i])] = '0'
                  }
             }
-            //console.log("formatedWordObject", formatedWordObject)
             newGuesses.push(formatedWordObject)
         
 
@@ -121,14 +119,13 @@ const useWordle = ({solutions, possibleWords})=> {
     }
 
     const addNewGuess = ()=>{
-        console.log("Current index: " ,index)
-        console.log("Trying to guess: ", solutions[index])
-        console.log("using: ", currentGuess)
+        // console.log("Current index: " ,index)
+        // console.log("Trying to guess: ", solutions[index])
+        // console.log("using: ", currentGuess)
         if (currentGuess == solutions[index]){
             setDone(true)
             let m = formatGuesses([...guessesStrings, currentGuess], index)
             let k = formatKeypad(m)
-            console.log("Keypad", k)
             setLetters(k)
             setGuessesObjects(m)
             setGuessesStrings((prev) => {return[...prev, currentGuess]})
@@ -136,7 +133,6 @@ const useWordle = ({solutions, possibleWords})=> {
         } else if (index == 5) {
             let m = formatGuesses([...guessesStrings, currentGuess], index)
             let k = formatKeypad(m)
-            console.log("Keypad", k)
             setGuessesObjects(m)
             setLetters(k)
             setGuessesStrings((prev) => {return[...prev, currentGuess]})
@@ -145,7 +141,6 @@ const useWordle = ({solutions, possibleWords})=> {
         } else {
             let m = formatGuesses([...guessesStrings, currentGuess], index+1)
             let k = formatKeypad(m)
-            console.log("Keypad", k)
             setGuessesObjects(m)
             setLetters(k)
             setGuessesStrings((prev) => {return[...prev, currentGuess]})
@@ -185,15 +180,16 @@ const useWordle = ({solutions, possibleWords})=> {
                 console.log("Word must be 5 characters")
                 return
             }
-            console.log(guessesStrings)
             if (guessesStrings.includes(currentGuess)) {
                 window.alert("You already've used that word")
                 return
             }
+            try {
             if (!possibleWords.includes(currentGuess)) {
                     window.alert("Not a valid word")
                     return
             }  
+            } catch {}
             addNewGuess()
             
 

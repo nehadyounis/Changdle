@@ -12,11 +12,11 @@ export default function Wordle(solutions) {
     useEffect(() => {
         window.addEventListener('keyup', isKeyPressed)
         if (done) {
-            setTimeout(()=>setShowDialogue(true), 2500)
+            setTimeout(()=>setShowDialogue(true), 1500)
             window.removeEventListener('keyup', isKeyPressed)
         }
-        if (index > 5) {
-            setTimeout(()=>setShowDialogue(true), 2500)
+        if (guessesStrings.length == 6  && !done) {
+            setTimeout(()=>setShowDialogue(true), 1500)
             window.removeEventListener('keyup', isKeyPressed)
         }
 
